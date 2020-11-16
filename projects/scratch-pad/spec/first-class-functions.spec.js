@@ -8,6 +8,7 @@ describe("#first-class-functions", function () {
     });
     
     describe("createGreaterThanFilter()", function () {
+    
         it('should, given a base threshold of type Number, return a Function that tests whether a Number value is greater than the base', function() {
             var greaterThan2 = createGreaterThanFilter(2);
             expect(greaterThan2).to.be.instanceof(Function);

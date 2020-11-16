@@ -35,6 +35,11 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+    return {
+    id: `${id}`,
+    nameFirst: `${nameFirst}`,
+    nameLast: `${nameLast}`
+};
 
 } 
 
@@ -43,14 +48,56 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
-    }
+        },
+        
+ //create funciton with parameter named contact
+        //return concacts.push(contacts) to add a contact object into 
+        addContact: function(contact){
+            return contacts.push(contact);
+        },
+        findContact: function(fullName){
+            //create for loop 
+            for (let i = 0; i < contacts.length; i++){
+                //create condtional statement 
+                //if fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"] return contacts[i]
+                if(fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"]) {
+                return contacts[i];
+                //else return undefined 
+              } else {
+                  return undefined;
+              }
+            }
+        }, 
+      removeContact: function(contact){
+          //create for loop
+             for(var i = 0; i < contacts.length; i++){
+                 //create condtional statement
+                 //if contacts[i] strictly equals contact return contacts using splice method
+           if(contacts[i] === contact) {
+        return contacts.splice(i, 1);
+           }
+      }
+     
+      }, 
+      
+      printAllContactNames: function(){
+          //create let varibale contactNames assigned with empty string
+          let contactNames = '';
+          //create for loop
+          for (let i = 0; i < contacts.length; i++){
+              contactNames += contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n';
+          }
+          //return contactNames with with slice method of 0,contactNames.length - 1
+          return contactNames.slice(0,contactNames.length - 1);
+      }
+      
+      }
 }
 
 

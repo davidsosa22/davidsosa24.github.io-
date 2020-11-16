@@ -99,6 +99,7 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
+ return Object.values(object).length;
  
   
   
@@ -112,7 +113,10 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  
+    let obj = Object.values(object)
+  for (let i = obj.length - 1; i >= 0; i--) {
+    console.log(obj[i]); 
+  }
   
   
   

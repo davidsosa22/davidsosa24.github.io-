@@ -26,6 +26,7 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
+    //.toLowerCase returns a string in lowercase format 
 return string.toLowerCase()
 
 
@@ -37,6 +38,7 @@ return string.toLowerCase()
  */
 function toUpperCase(string) {
     // YOUR CODE BELOW HERE //
+    //.toUpperCase returns a string in upperCase format 
 return string.toUpperCase();
 
 
@@ -58,7 +60,9 @@ return string.toUpperCase();
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
-return string.replace(/[^a-zA-Z]/g, "-").toLowerCase();
+ //use .replace to replace the string with a new string that is lowercased and with a dash
+ return string.replace(/[^a-zA-Z]/g, "-").toLowerCase();
+
 
     // YOUR CODE ABOVE HERE //
 }
@@ -138,7 +142,8 @@ return stringOne.concat(stringTwo);
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
     var args = Array.from(arguments);
-return stringOne + stringTwo
+//use join method to join the strings together
+return args.join("");
     // YOUR CODE ABOVE HERE //
 }
 

@@ -14,7 +14,8 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    
+    //checks if the value is an Array
+    return Array.isArray(value);
     
     
     
@@ -31,9 +32,26 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+     if (Array.isArray(value) ) {
+    return false;
+}
+    //else if value === null return false
+    else if (value === null){
+        return false;
+    }
+    //else if value instanceof Date return false
+  else if (value instanceof Date){
+      return false;
+  } 
+  //else if typeof value === 'object' return true 
+  else if(typeof value === 'object'){
+      return true;
+  }
+  //else return false
+  else {
+      return false;
+  } 
+  
     
     // YOUR CODE ABOVE HERE //
 }
@@ -46,8 +64,21 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
-    
-    
+         if (value === null){
+        return false;
+    }
+    //else if value instanceof Dat return false 
+  else if (value instanceof Date){
+      return false;
+  } 
+  //else if typeof value === 'object' return true 
+  else if(typeof value === 'object'){
+      return true;
+  }
+  //else return false
+  else {
+      return false;
+  }
     
     
     // YOUR CODE ABOVE HERE //
@@ -74,6 +105,24 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
+     if (typeof value !== "object") {
+        return typeof value;
+    } else {
+        //if the value parameter does have the type ‘object’, do the following:
+        //if the value is null, return ‘null’
+        if (value === null) {
+            return "null";
+        } else if (value instanceof Date) {
+            //if the value is a Date, return ‘date’
+            return "date";
+        } else if (Array.isArray(value)) {
+            //if the value is an array, return ‘array’
+            return "array";
+        } else {
+            //if no previous conditions are met, return an error message
+            return "error"
+        }
+    }
     
     
     
